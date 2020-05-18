@@ -1,28 +1,19 @@
 line = gets.split(' ').map(&:to_i)
 
-A = line[0]
+a = line[0]
 b = line[1]
 c = line[2]
 k = line[3]
 
-max = 0
 
-if (k - A) >= 0
-  max += A * 1
-  k -= A
-end
+xa = [a, k].min
+k -= xa
 
-if (k - b) >= 0
-  k -= b
-end
+xb = [b, k].min
+k -= xb
 
+xc = k
 
-if (k - c) >= 0
-  max -= c * 1
-elsif c > k && k > 0
-  max -= k * 1
-end 
+ans = xa - xc
 
-
-  
-puts max
+puts ans
